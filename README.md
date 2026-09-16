@@ -1,12 +1,16 @@
 # Co-USE／PiSuAI GitHub Pages Demo
 
+# Co-USE／PiSuAI 靜態 Demo
+
 這是 Co-USE／PiSuAI 專利工作對話介面的**獨立靜態展示版**，用於呈現首頁、左右抽屜、沉浸式對話、六站工作時間軸與行動版配置。
+
+公開預覽：<https://kuohuafan.github.io/>
 
 ## 重要界線
 
 本 Demo **不連接**登入、資料庫、Solr、檔案儲存、真實 AI 工作、正式審閱、外部檢索或送件服務。所有畫面操作只存在於目前瀏覽器頁面，不會建立案件、工作紀錄或交付物。
 
-正式全端專案備份位於私人儲存庫 `couse-pisuai-workspace-backup`；本公開儲存庫只包含 Demo 所需的 HTML、CSS、JavaScript 與 GitHub Pages 設定。
+正式全端專案備份位於私人儲存庫 `couse-pisuai-workspace-backup`；本公開儲存庫只包含 Demo 所需的 HTML、CSS 與 JavaScript。公開頁面由 `KuohuaFan/KuohuaFan.github.io` 的 `main` 分支根目錄發布，不需要後端服務或環境變數。
 
 ## 本機預覽
 
