@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#faf8f3" />
+    <meta name="description" content="Co-USE／PiSuAI 專利工作對話介面靜態展示版" />
+    <title>Co-USE／PiSuAI Demo</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell" id="appShell">
+      <header class="topbar">
+        <button class="icon-button" id="openHistory" type="button" aria-label="開啟對話紀錄">
+          <span></span><span></span><span></span>
+        </button>
+        <a class="brand" href="#top" aria-label="回到 Co-USE Demo 首頁">
+          <span class="brand-mark">P</span>
+          <span><strong>PiSuAI™｜紫鳥貔貅</strong><small>Co-USE 專利工作對話</small></span>
+        </a>
+        <button class="work-button" id="openWork" type="button" aria-label="開啟工作選單">
+          <span></span><span></span><span></span>
+        </button>
+      </header>
+
+      <main class="conversation" id="top">
+        <section class="demo-banner" aria-label="展示版說明">
+          <strong>GitHub Pages 靜態 Demo</strong>
+          <span>僅展示介面與操作流程；不連接登入、資料庫、Solr、AI 執行、正式審閱或外部提交。</span>
+        </section>
+
+        <section class="hero" id="hero">
+          <p class="eyebrow">Co-USE</p>
+          <h1>把技術說清楚<br />讓專利工作接著完成。</h1>
+          <p>說明您的需求，或用展示操作查看專利工作如何在同一個對話中接續。</p>
+          <div class="prompt-grid" aria-label="範例提示">
+            <button class="prompt-card" data-prompt="請從技術資料開始起草專利說明書">從技術資料起草</button>
+            <button class="prompt-card" data-prompt="請檢查現有草稿並指出待補資料">檢查現有草稿</button>
+            <button class="prompt-card" data-prompt="請比較兩個專利文件版本">比較兩個版本</button>
+          </div>
+        </section>
+
+        <section class="chat-log" id="chatLog" aria-live="polite">
+          <article class="message assistant-message">
+            <div class="speaker"><span class="assistant-avatar">✦</span><strong>PiSuAI</strong></div>
+            <p>請直接說明您希望完成的專利文件。這個公開 Demo 只呈現互動方式，不會讀取、上傳或保存資料。</p>
+          </article>
+        </section>
+
+        <section class="workflow" id="workflow" hidden>
+          <div class="workflow-heading">
+            <div><p class="eyebrow">展示工作時間軸</p><h2>目前尚未執行正式工作</h2></div>
+            <span class="progress-pill">0／6</span>
+          </div>
+          <p class="workflow-note">GitHub Pages 沒有後端；下列節點只示範正式系統如何呈現已保存狀態。</p>
+          <ol class="timeline">
+            <li class="current"><span>1</span><div><strong>挑選範本</strong><small>展示：等待正式系統依資料判斷</small></div></li>
+            <li><span>2</span><div><strong>撰寫草稿</strong><small>尚未執行</small></div></li>
+            <li><span>3</span><div><strong>類案審查</strong><small>外部檢索未在 Demo 接通</small></div></li>
+            <li><span>4</span><div><strong>進行修改</strong><small>尚未執行</small></div></li>
+            <li><span>5</span><div><strong>進行比較</strong><small>尚未執行</small></div></li>
+            <li><span>6</span><div><strong>安全交付</strong><small>正式版需人工審閱</small></div></li>
+          </ol>
+          <details class="completed"><summary>已完成步驟（0）</summary><p>Demo 不會建立工作紀錄或交付物。</p></details>
+        </section>
+      </main>
+
+      <form class="composer" id="composer">
+        <button class="attach-button" id="attachDemo" type="button" aria-label="附件功能說明">⌕</button>
+        <label class="composer-field">
+          <span class="sr-only">輸入專利工作需求</span>
+          <textarea id="messageInput" rows="1" placeholder="您想完成哪一份專利文件？"></textarea>
+        </label>
+        <button class="send-button" type="submit" aria-label="送出展示訊息">➤</button>
+      </form>
+    </div>
+
+    <div class="drawer-layer" id="historyLayer" hidden>
+      <button class="overlay" data-close="history" aria-label="關閉對話紀錄"></button>
+      <aside class="drawer history-drawer" role="dialog" aria-modal="true" aria-labelledby="historyTitle">
+        <header class="drawer-head">
+          <div><strong id="historyTitle">Co-USE</strong><small>專利工作對話</small></div>
+          <button class="close-button" data-close="history" aria-label="關閉">×</button>
+        </header>
+        <nav class="drawer-actions" aria-label="對話操作">
+          <button id="newConversation"><span>＋</span>新對話</button>
+          <button id="searchConversation"><span>⌕</span>搜尋</button>
+        </nav>
+        <section class="history-zone">
+          <div class="history-toolbar">
+            <strong>歷史對話</strong>
+            <button class="filter active" data-filter="all">全部</button>
+            <button class="filter" data-filter="starred">Starred</button>
+            <button class="filter" data-filter="artifacts">Artifacts</button>
+          </div>
+          <div class="history-list" id="historyList">
+            <button class="history-row" data-kind="starred">
+              <span><strong>Demo：從技術資料起草</strong><small>靜態展示紀錄，不會同步雲端</small></span><span aria-hidden="true">⌑</span>
+            </button>
+            <button class="history-row" data-kind="all">
+              <span><strong>Demo：檢查現有草稿</strong><small>查看沉浸式對話與工作時間軸</small></span><span aria-hidden="true">›</span>
+            </button>
+            <button class="history-row" data-kind="artifacts">
+              <span><strong>Demo：交付物版本</strong><small>正式版才會建立可追溯 Artifact</small></span><span aria-hidden="true">›</span>
+            </button>
+          </div>
+        </section>
+        <footer class="account-bar">
+          <span class="account-avatar">訪</span>
+          <span><strong>訪客展示模式</strong><small>不建立帳號或保存資料</small></span>
+          <button id="accountInfo" type="button">說明</button>
+        </footer>
+      </aside>
+    </div>
+
+    <div class="drawer-layer" id="workLayer" hidden>
+      <button class="overlay" data-close="work" aria-label="關閉工作選單"></button>
+      <aside class="drawer work-drawer" role="dialog" aria-modal="true" aria-labelledby="workTitle">
+        <header class="drawer-head dark">
+          <div><strong id="workTitle">專利 Work</strong><small>六站工作入口</small></div>
+          <button class="close-button light" data-close="work" aria-label="關閉">×</button>
+        </header>
+        <div class="work-scroll">
+          <details open><summary>快速開始</summary><div class="work-grid"><button data-prompt="請從技術資料開始起草專利說明書">從技術資料起草</button><button data-prompt="請檢查現有草稿並指出待補資料">檢查現有草稿</button><button data-prompt="請比較兩個專利文件版本">比較兩個版本</button></div></details>
+          <details open><summary>六站專利 Work</summary><ol class="work-stages"><li>挑選範本</li><li>撰寫草稿</li><li>類案審查</li><li>進行修改</li><li>進行比較</li><li>安全交付</li></ol></details>
+          <details><summary>可加入原物料</summary><p>正式版支援技術文件、圖式、既有草稿與可解析附件。本 Demo 不會上傳檔案。</p></details>
+          <details><summary>執行界線</summary><p>外部檢索、正式審閱、送件與資料保存均須回到正式 Co-USE 系統執行。</p></details>
+        </div>
+      </aside>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+    <script src="./app.js"></script>
+  </body>
+</html>
