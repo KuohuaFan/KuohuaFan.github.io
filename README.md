@@ -1,5 +1,3 @@
-# Co-USE／PiSuAI GitHub Pages Demo
-
 # Co-USE／PiSuAI 靜態 Demo
 
 這是 Co-USE／PiSuAI 專利工作對話介面的**獨立靜態展示版**，用於呈現首頁、左右抽屜、沉浸式對話、六站工作時間軸與行動版配置。
@@ -34,7 +32,7 @@ npx playwright install chromium
 npm test
 ```
 
-執行 `npm run test:live` 可直接核對已發布的 GitHub Pages。GitHub Actions 會在 `main` 推送與 Pull Request 時核對已簽入來源，並在手動觸發及每週排程時核對已發布公開站；失敗時保留 14 天的截圖、trace、影片與 HTML 報告。
+執行 `npm run test:live` 可直接核對已發布的 GitHub Pages。專案目前另設每週一次的已發布網站回歸排程，同時核對 GitHub Pages 與受保護 `/trial` 入口並向專案任務回報結果。GitHub Actions workflow 也已備妥；待 GitHub 連線取得 `workflows` 寫入權限後，可再啟用推送／Pull Request 自動檢查與 14 天測試證據保存。
 
 ## 驗證尺寸
 
