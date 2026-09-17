@@ -1,0 +1,14 @@
+{
+  "name": "couse-pisuai-demo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "playwright test",
+    "test:live": "DEMO_BASE_URL=https://kuohuafan.github.io/ TRIAL_BASE_URL=https://couse2.manus.space/trial playwright test",
+    "test:report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.0"
+  }
+}
