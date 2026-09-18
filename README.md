@@ -6,6 +6,14 @@
 
 受保護真實服務試用入口：<https://couse2.manus.space/trial>
 
+營業秘密法 知識平台AI 唯讀版：<https://kuohuafan.github.io/trade-secrets-knowledge-platform-ai/>
+
+## PisuAI｜紫鳥貔貅智慧法律知識子站
+
+`trade-secrets-knowledge-platform-ai/` 是「營業秘密法 知識平台AI」的獨立靜態子站。公開範圍包括 25 條法規、智慧財產局七份歷年彙編的 243 案索引、主題與法條熱度，以及官方頁面與 PDF 追溯連結。
+
+該子站不公開完整官方摘要、法院理由節錄、逐案 DJS／CEF 全文、會員資料或 secrets。GitHub Pages 不執行登入、AI、資料庫、收藏、比較或 Solr 全文服務；這些能力仍由完整 Manus 全端平台提供。
+
 ## 重要界線
 
 本 Demo **不連接**登入、資料庫、Solr、檔案儲存、真實 AI 工作、正式審閱、外部檢索或送件服務。所有畫面操作只存在於目前瀏覽器頁面，不會建立案件、工作紀錄或交付物。

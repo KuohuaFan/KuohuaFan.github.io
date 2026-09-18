@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="營業秘密法 知識平台AI 的 GitHub Pages 唯讀版，收錄全法條文與智慧財產局歷年 243 件精選案例索引。"
+    />
+    <meta name="theme-color" content="#111f43" />
+    <title>營業秘密法 知識平台AI｜PisuAI 紫鳥貔貅智慧</title>
+    <link rel="icon" type="image/png" href="./assets/pisuai-logo.png" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳至主要內容</a>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="回到首頁">
+        <img src="./assets/pisuai-logo.png" alt="PisuAI 紫鳥貔貅智慧 Logo" />
+        <span class="brand-copy">
+          <strong>PisuAI</strong>
+          <small>紫鳥貔貅智慧</small>
+        </span>
+      </a>
+      <nav aria-label="主要導覽">
+        <a href="#articles">法條</a>
+        <a href="#practice">實務資料庫</a>
+        <a href="#trends">趨勢</a>
+        <a href="#about">版本說明</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section id="top" class="hero">
+        <div class="hero-glow hero-glow-one"></div>
+        <div class="hero-glow hero-glow-two"></div>
+        <div class="hero-inner">
+          <div class="eyebrow">制度語義專利技術 · Patent Pending</div>
+          <img
+            class="hero-logo"
+            src="./assets/pisuai-logo.png"
+            alt=""
+            aria-hidden="true"
+          />
+          <p class="slogan">PisuAI <span>|</span> 紫鳥貔貅智慧</p>
+          <h1>營業秘密法 <em>知識平台</em>AI</h1>
+          <p class="hero-en">Trade Secrets Act · TSA</p>
+          <p class="hero-lead">法條解構 × 構成要件檢核 × 裁判實務導讀</p>
+          <div class="hero-actions">
+            <a class="button button-gold" href="#practice">搜尋 243 件案例</a>
+            <a class="button button-ghost" href="#articles">閱讀全法條文</a>
+          </div>
+          <p class="static-notice">
+            GitHub Pages 唯讀版：不執行登入、AI 問答、會員收藏、資料庫寫入或
+            Solr 全文查詢。
+          </p>
+        </div>
+      </section>
+
+      <section class="metric-strip" aria-label="資料概況">
+        <div><strong id="metricArticles">25</strong><span>條法規</span></div>
+        <div><strong id="metricCases">243</strong><span>件精選案例</span></div>
+        <div>
+          <strong id="metricCollections">7</strong><span>份官方彙編</span>
+        </div>
+        <div><strong>100–114</strong><span>年度範圍</span></div>
+      </section>
+
+      <section id="articles" class="section section-soft">
+        <div class="section-heading">
+          <div>
+            <p class="kicker">STATUTE KNOWLEDGE</p>
+            <h2>營業秘密法條文與實務導讀</h2>
+          </div>
+          <label class="search-box">
+            <span>搜尋條文</span>
+            <input
+              id="articleSearch"
+              type="search"
+              placeholder="例如：合理保密措施、損害賠償、第13條之1"
+            />
+          </label>
+        </div>
+        <div id="articleList" class="article-grid" aria-live="polite">
+          <p class="loading">正在載入條文資料…</p>
+        </div>
+      </section>
+
+      <section id="practice" class="section">
+        <div class="section-heading">
+          <div>
+            <p class="kicker">TIPO PRACTICE DATABASE</p>
+            <h2>智慧財產局歷年精選案例資料庫</h2>
+            <p class="section-copy">
+              公開版保留官方彙編、法院、案號、主題、法條關聯與官方來源追溯；完整
+              DJS／CEF 研究內容留在全端平台。
+            </p>
+          </div>
+        </div>
+        <div class="source-alert">
+          <strong>來源界線</strong>
+          <span
+            >智慧財產局官方編選摘要並非法院裁判書全文；個案引用前請回查司法院原始裁判。</span
+          >
+        </div>
+        <div class="filter-panel">
+          <label class="wide-field">
+            <span>關鍵字</span>
+            <input
+              id="caseSearch"
+              type="search"
+              placeholder="搜尋案號、法院、主題、關鍵詞或導讀內容"
+            />
+          </label>
+          <label>
+            <span>彙編年度</span>
+            <select id="yearFilter">
+              <option value="">全部年度</option>
+            </select>
+          </label>
+          <label>
+            <span>案件類型</span>
+            <select id="typeFilter">
+              <option value="">全部類型</option>
+              <option value="civil">民事</option>
+              <option value="criminal">刑事</option>
+              <option value="procedure">程序</option>
+              <option value="other">其他</option>
+            </select>
+          </label>
+          <label>
+            <span>主題</span>
+            <select id="topicFilter">
+              <option value="">全部主題</option>
+            </select>
+          </label>
+        </div>
+        <div class="result-toolbar">
+          <p id="caseResultCount">載入案例中…</p>
+          <button id="resetFilters" class="text-button" type="button">
+            清除篩選
+          </button>
+        </div>
+        <div id="caseList" class="case-list" aria-live="polite"></div>
+        <div class="pagination" aria-label="案例分頁">
+          <button id="prevPage" type="button">上一頁</button>
+          <span id="pageStatus">第 1 頁</span>
+          <button id="nextPage" type="button">下一頁</button>
+        </div>
+      </section>
+
+      <section id="trends" class="section section-navy">
+        <div class="section-heading section-heading-light">
+          <div>
+            <p class="kicker">PRACTICE ANALYTICS</p>
+            <h2>年度趨勢與法條熱度</h2>
+            <p class="section-copy">
+              以下統計反映各冊官方選案分布，不代表全體法院案件發生率。
+            </p>
+          </div>
+        </div>
+        <div class="chart-grid">
+          <article class="chart-card">
+            <h3>彙編年度案例量</h3>
+            <div id="yearChart" class="bar-chart"></div>
+          </article>
+          <article class="chart-card">
+            <h3>常見主題</h3>
+            <div id="topicChart" class="bar-chart"></div>
+          </article>
+          <article class="chart-card chart-card-wide">
+            <h3>法條關聯熱度</h3>
+            <div id="articleHeatChart" class="heat-grid"></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="about" class="section section-soft">
+        <div class="about-grid">
+          <div>
+            <p class="kicker">STATIC EDITION</p>
+            <h2>為備份與公共查閱而設的靜態版本</h2>
+          </div>
+          <div class="prose">
+            <p>
+              本站是「營業秘密法 知識平台AI」的 GitHub Pages
+              唯讀版本。完整平台仍以 React、tRPC、Express、Drizzle、MySQL／TiDB
+              與 Manus OAuth 運作，並提供會員、AI、收藏、比較與匯出功能。
+            </p>
+            <p>
+              靜態版不含任何帳密、秘密環境變數、會員資料或伺服器端能力。所有案例導讀均為研究用途，不構成正式法律意見。
+            </p>
+            <a
+              class="button button-navy"
+              href="https://tradesecret.manus.space"
+              target="_blank"
+              rel="noopener noreferrer"
+              >前往完整平台</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-brand">
+        <img src="./assets/pisuai-logo.png" alt="" />
+        <div>
+          <strong>PisuAI | 紫鳥貔貅智慧</strong
+          ><span>營業秘密法 知識平台AI</span>
+        </div>
+      </div>
+      <p>本平台僅供法律研究與一般參考，實際個案請諮詢專業律師。</p>
+      <p>
+        © <span id="copyrightYear"></span> Dr.Fan / PingLexAI. All rights
+        reserved.
+      </p>
+    </footer>
+
+    <dialog id="caseDialog" class="case-dialog">
+      <button
+        id="closeDialog"
+        class="dialog-close"
+        type="button"
+        aria-label="關閉"
+      >
+        ×
+      </button>
+      <div id="caseDialogContent"></div>
+    </dialog>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
